@@ -1,17 +1,20 @@
 {
   "author": "Paul Serby <paul@serby.net>",
   "name": "pliers-danger-seeker",
-  "description": "Search filesets for a list of dangerous expersions",
+  "description": "Search pliers filesets for a list of dangerous expersions",
   "version": "0.0.1",
-  "tags": [],
+  "tags": [
+    "pliers",
+    "qa"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:serby/pliers-danger-seeker"
   },
   "publishConfig": {
-    "registry":"http://registry.npmjs.org"
+    "registry": "http://registry.npmjs.org"
   },
-  "main": "",
+  "main": "./pliers-danger",
   "scripts": {
     "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint-full-path/index.js",
     "pretest": "npm run-script lint",
@@ -22,7 +25,10 @@
   "engines": {
     "node": ">=0.10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "async": "~0.2.9",
+    "stream-grep": "0.0.1"
+  },
   "devDependencies": {
     "mocha": "1",
     "should": "2",
