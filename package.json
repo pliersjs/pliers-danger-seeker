@@ -2,7 +2,7 @@
   "author": "Paul Serby <paul@serby.net>",
   "name": "pliers-danger-seeker",
   "description": "Search pliers filesets for a list of dangerous expersions",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "tags": [
     "pliers",
     "qa"
