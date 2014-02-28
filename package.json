@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "async": "~0.2.9",
-    "stream-grep": "0.0.1"
+    "stream-grep": "0.1.0"
   },
   "devDependencies": {
     "mocha": "1",
