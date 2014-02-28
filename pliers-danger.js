@@ -10,12 +10,16 @@ module.exports = function (pliers, path) {
   function processGroup(type, group, callback) {
     var totalFound = 0
 
-    function checkFile(type, file, terms, errorMessage, callback) {
+    function checkFile(type, file, terms, matcher, errorMessage, callback) {
       pliers.logger.debug('Searching file', file)
       var log = type === 'error' ? pliers.logger.error : pliers.logger.warn
-      streamGrep(fs.createReadStream(file), terms)
+      streamGrep(fs.createReadStream(file), terms, matcher)
         .on('found', function (term, line) {
           log(type, relative(process.cwd(), file) + ':' + line, '-- found', term)
+        })
+        .on('captured', function (term, line) {
+          // matcher.
+          log(type, relative(process.cwd(), file) + ':' + line, '-- found "' + term + '"')
         })
         .on('end', function(found) {
           totalFound += found
@@ -36,7 +40,7 @@ module.exports = function (pliers, path) {
       }
 
       async.each(files, function(file, cb) {
-        checkFile(type, file, rule.terms, rule.description, cb)
+        checkFile(type, file, rule.terms, rule.matcher, rule.description, cb)
       }, callback)
     }
 
