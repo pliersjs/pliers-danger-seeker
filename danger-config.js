@@ -16,6 +16,15 @@ module.exports = {
       ],
       fileset: 'css',
       description: 'Missing versionPath'
+    },
+    { terms:
+      [ /__\('((?:\\.|[^'\\])*)',?/
+      ]
+    , matcher: function (value) { return (value === 'pass') }
+    , fileset:
+      [ 'templates'
+      ]
+    , description: 'Found Missing Language Definition'
     }
   ],
   warning: [
