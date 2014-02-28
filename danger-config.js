@@ -10,12 +10,14 @@ module.exports = {
       fileset: 'templates',
       description: 'Missing versionPath'
     },
-    {
-      terms: [
-        /url\(['"]?(?!(http|\/\/))/
-      ],
-      fileset: 'css',
-      description: 'Missing versionPath'
+    { terms:
+      [ /__\('((?:\\.|[^'\\])*)',?/
+      ]
+    , matcher: function (value) { return (value === 'pass') }
+    , fileset:
+      [ 'templates'
+      ]
+    , description: 'Found Missing Language Definition'
     }
   ],
   warning: [
