@@ -10,6 +10,13 @@ module.exports = {
       fileset: 'templates',
       description: 'Missing versionPath'
     },
+    {
+      terms: [
+        /url\(['"]?(?!(http|\/\/))/
+      ],
+      fileset: 'css',
+      description: 'Missing versionPath'
+    },
     { terms:
       [ /__\('((?:\\.|[^'\\])*)',?/
       ]
