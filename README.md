@@ -2,11 +2,13 @@
 
 Search filesets for a list of dangerous expersions
 
-[![build status](https://secure.travis-ci.org/serby/pliers-danger-seeker.png)](http://travis-ci.org/serby/pliers-danger-seeker)
+[![build status](https://secure.travis-ci.org/pliersjs/pliers-danger-seeker.png)](http://travis-ci.org/pliersjs/pliers-danger-seeker)
 
 ## Installation
 
-      npm install pliers-danger-seeker
+```
+npm install pliers-danger-seeker
+```
 
 ## Usage
 
