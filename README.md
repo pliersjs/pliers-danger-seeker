@@ -1,4 +1,4 @@
-# pliers-danger-seeker
+# [pliers](https://pliersjs.github.io/)-danger-seeker
 
 Search filesets for a list of dangerous expersions
 
