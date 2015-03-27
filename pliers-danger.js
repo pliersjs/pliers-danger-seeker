@@ -44,7 +44,7 @@ module.exports = function (pliers, path) {
       }, callback)
     }
 
-    async.each(group, processRule.bind(null, type), function(error) {
+    async.eachSeries(group, processRule.bind(null, type), function(error) {
       if (error) callback(error)
       callback(null, totalFound)
     })

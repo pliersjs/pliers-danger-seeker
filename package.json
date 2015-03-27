@@ -16,24 +16,22 @@
   },
   "main": "./pliers-danger",
   "scripts": {
-    "lint": "./node_modules/.bin/jshint . --reporter=./node_modules/jshint-full-path/index.js",
-    "pretest": "npm run-script lint",
-    "testSkip": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec -r should",
-    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "lint": "jshint . --reporter=./node_modules/jshint-full-path/index.js",
+    "pretest": "npm run lint",
     "prepublish": "npm test && npm prune"
   },
   "engines": {
     "node": ">=0.10"
   },
   "dependencies": {
-    "async": "~0.2.9",
-    "stream-grep": "0.1.0"
+    "async": "^0.9.0",
+    "stream-grep": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "1",
-    "should": "2",
-    "istanbul": "~0.1.44",
-    "jshint": "~2.3.0",
-    "jshint-full-path": "~0.1.0"
+    "istanbul": "^0.3.11",
+    "jshint": "^2.6.3",
+    "jshint-full-path": "^1.1.1",
+    "mocha": "^2.2.1",
+    "should": "^5.2.0"
   }
 }
